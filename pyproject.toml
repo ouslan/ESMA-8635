@@ -3,5 +3,15 @@ name = "esma-8635"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
+authors = [
+    { name = "Alejandro Ouslan", email = "alejandro.ouslan@upr.edu" }
+]
 requires-python = ">=3.13"
 dependencies = []
+
+[project.scripts]
+esma-8635 = "esma_8635:main"
+
+[build-system]
+requires = ["uv_build>=0.9.28,<0.10.0"]
+build-backend = "uv_build"
