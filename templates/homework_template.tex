@@ -1,0 +1,250 @@
+\documentclass{article}
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+
+\usetikzlibrary{automata,positioning}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{\hmwkClass\ (\hmwkClassInstructor): \hmwkTitle}
+\rhead{\firstxmark}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+
+%
+% Create Problem Sections
+%
+
+\newcommand{\enterProblemHeader}[1]{
+	\nobreak\extramarks{}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+	\nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+}
+
+\newcommand{\exitProblemHeader}[1]{
+	\nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+	\stepcounter{#1}
+	\nobreak\extramarks{Problem \arabic{#1}}{}\nobreak{}
+}
+
+\setcounter{secnumdepth}{0}
+\newcounter{partCounter}
+\newcounter{homeworkProblemCounter}
+\setcounter{homeworkProblemCounter}{1}
+\nobreak\extramarks{Problem \arabic{homeworkProblemCounter}}{}\nobreak{}
+
+%
+% Homework Problem Environment
+%
+% This environment takes an optional argument. When given, it will adjust the
+% problem counter. This is useful for when the problems given for your
+% assignment aren't sequential. See the last 3 problems of this template for an
+% example.
+%
+\newenvironment{homeworkProblem}[1][-1]{
+	\ifnum#1>0
+		\setcounter{homeworkProblemCounter}{#1}
+	\fi
+	\section{Problem \arabic{homeworkProblemCounter}}
+	\setcounter{partCounter}{1}
+	\enterProblemHeader{homeworkProblemCounter}
+}{
+	\exitProblemHeader{homeworkProblemCounter}
+}
+
+%
+% Homework Details
+%   - Title
+%   - Due date
+%   - Class
+%   - Section/Time
+%   - Instructor
+%   - Author
+%
+
+\newcommand{\hmwkTitle}{Asignacion\ \#1}
+\newcommand{\hmwkDueDate}{Septiembre 5, 2024}
+\newcommand{\hmwkClass}{ESMA 6000}
+\newcommand{\hmwkClassInstructor}{Israel Almodovar}
+\newcommand{\hmwkAuthorName}{\textbf{Alejandro Ouslan}}
+
+%
+% Title Page
+%
+
+\title{
+	\vspace{2in}
+	\textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+	\normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate}\\
+	\vspace{0.1in}\large{\textit{\hmwkClassInstructor}}
+	\vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+%
+% Various Helper Commands
+%
+
+% Useful for algorithms
+\newcommand{\alg}[1]{\textsc{\bfseries \footnotesize #1}}
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+\begin{document}
+
+\maketitle
+
+\pagebreak
+
+% Homework problem 1
+\begin{homeworkProblem}
+	Using your own words define the following concepts:
+	\begin{itemize}
+		\item \textbf{Sample Space:}
+		      The sample space is the set of all possible outcomes of an experiment. It is to say everythig that could happen
+		      in the experiment
+		\item \textbf{Countable Sets (give an example):}
+		      A countable set is a set that can be put in a one-to-one correspondence with the set of natural numbers $\mathbb{N}$.
+		      An example of a countable set is the set would be the set of possible lottery numbers given that we can express or quantify
+		      the set of numbers that can be drawn.
+		\item \textbf{$\sigma$-algebra $\mathcal{B}$:}
+		      $\sigma$-algebra is a collection of combinations of sets or events of the sample space.
+		\item \textbf{The following triplet $(\mathcal{S}, \mathcal{B}, P)$:}
+		      The triplet $(\mathcal{S}, \mathcal{B}, P)$ is given the sample space $\mathcal{S}$, the event/set of events $\sigma$-algebra
+		      $\mathcal{B}$ has the probability measure $P$.
+	\end{itemize}
+\end{homeworkProblem}
+
+% Homework problem 2
+\begin{homeworkProblem}
+
+	For each of the following experiments, describe the sample space.
+
+	\begin{itemize}
+		\item Toss a coin four times.\\
+		      The sample space is the set of all possible outcomes of the experiment. An example of the events that are contain in the sample space
+		      are $\{HHHH, HHHT, \dots, TTTT\}$.
+		\item Count the number of insects-damaged leaves on a plant. \\
+		      The sample space is the set of all possible counts of insects-damaged leaves on a plant. An example asumming that there are 10 plants
+		      the sample space would be $\{0, 1, 2, \dots, 10\}$.
+		\item Measure the lifetime (in hours) of a particular brand of lights bulbs.
+		      The sample space is the set of all possible lifetimes (in hours) of a particular brand of lights. An example given the brand \textit{generic-x}
+		      and we looked at 5 bulbs the sample space would be $\{0, \dots, 1000, \dots, \infty\}$.
+		\item Record the weights of 10-day-old babies. \\
+		      The sample space is the set of all possible weights of 10-day-old babies. An example given the weights of 10-day-old babies in grams the sample
+		      space would be $\{0, \dots, 1000, \dots, \infty\}$.
+		\item Observe the proportion of defective in a shipment of electreonic components. \\
+		      The sample space is the set of all possible proportions of defective in a shipment of electronic components. An example given the proportion of defective
+		      in a shipment of electronic components the sample space would be $\{0, \dots, 1\}$.
+
+	\end{itemize}
+\end{homeworkProblem}
+
+% Homework problem 3
+\begin{homeworkProblem}
+	Supose that $A \subset B$. Show that $B^c \subset A^c$
+	\begin{proof}
+		\begin{align*}
+		\end{align*}
+	\end{proof}
+\end{homeworkProblem}
+
+% Homework problem 4
+\begin{homeworkProblem}
+	Let $S$ be a sample space. Show that the collection $\mathcal{B} = \{\emptyset, S\}$ is a $\sigma$-algebra.
+	\begin{proof}
+		\begin{align*}
+		\end{align*}
+	\end{proof}
+\end{homeworkProblem}
+
+% Homework problem 5
+\begin{homeworkProblem}
+	Let $\Omega = \{1, 2, 3\}$ be the sample space. Let $\mathcal{B} = \{\{1\}, \{2, 3\}, \emptyset, \Omega\}$.
+	be a collection of $S$.
+	\begin{itemize}
+		\item Verify that $\mathcal{B_1}$ and $\mathcal{B_2}$ are $\sigma$-algebras.
+		\item Verify that $\mathcal{B_1} \cap \mathcal{B_2}$ is a $\sigma$-algebra.
+		\item Verify that $\mathcal{B_1} \cup \mathcal{B_2}$ is not a $\sigma$-algebra.
+		\item Discuss your results from (b) and (c).
+	\end{itemize}
+\end{homeworkProblem}
+
+% Homework problem 6
+\begin{homeworkProblem}
+	One ball is to be selected from a box containing red, white, blue, yellow, and green
+	balls. If the probability that the selected ball will be red is $\frac{1}{5}$, and the probability that it will be
+	white is $\frac{2}{5}$, what is the probability that it will be blue, yellow, or green?
+\end{homeworkProblem}
+
+% Homework problem 7
+\begin{homeworkProblem}
+	If $P(A) = \frac{1}{3}$  and $P(B^c) = \frac{1}{2}$, can $A$ and $B$ be disjoint? Explain.
+\end{homeworkProblem}
+
+% Homework problem 8
+\begin{homeworkProblem}
+	Prove that every two events $A$ and $B$, the probability that exactly one of the two events will
+	occur is given by the expression
+	$$P(A) + P(B) - 2P(A \cap B)$$
+\end{homeworkProblem}
+
+% Homework problem 9
+\begin{homeworkProblem}
+	For events $A$ and $B$, find formulas for the probabilities of the following events in terms of the quantities
+	$P(A)$, $P(B)$, and $P(A \cap B)$:
+	\begin{itemize}
+		\item either $A$ or $B$ or both occur.
+		\item either $A$ or $B$ but not both occur.
+		\item at least one of $A$ or $B$.
+		\item at most one of $A$ or $B$.
+	\end{itemize}
+\end{homeworkProblem}
+
+\end{document}
+
+
