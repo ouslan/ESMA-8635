@@ -1176,6 +1176,7 @@ dependencies = [
     { name = "bambi", version = "0.15.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
     { name = "bambi", version = "0.17.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
     { name = "cmdstanpy" },
+    { name = "jp-tools" },
     { name = "jupytext" },
     { name = "pymc", version = "5.25.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
     { name = "pymc", version = "5.27.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
@@ -1198,6 +1199,7 @@ requires-dist = [
     { name = "arviz", extras = ["all"], specifier = ">=0.23.1" },
     { name = "bambi", specifier = ">=0.15.0" },
     { name = "cmdstanpy", specifier = ">=1.3.0" },
+    { name = "jp-tools", specifier = ">=0.5.7" },
     { name = "jupytext", specifier = ">=1.19.1" },
     { name = "pymc", specifier = ">=5.25.1" },
     { name = "pystan", specifier = ">=3.10.0" },
@@ -1812,6 +1814,21 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/df/bf/f7da0350254c0ed7c72f3e33cef02e048281fec7ecec5f032d4aac52226b/jinja2-3.1.6.tar.gz", hash = "sha256:0137fb05990d35f1275a587e9aee6d56da821fc83491a0fb838183be43f66d6d", size = 245115, upload-time = "2025-03-05T20:05:02.478Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/62/a1/3d680cbfd5f4b8f15abc1d571870c5fc3e594bb582bc3b64ea099db13e56/jinja2-3.1.6-py3-none-any.whl", hash = "sha256:85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67", size = 134899, upload-time = "2025-03-05T20:05:00.369Z" },
+]
+
+[[package]]
+name = "jp-tools"
+version = "0.5.7"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "numpy", version = "2.2.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
+    { name = "numpy", version = "2.3.5", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
+    { name = "requests" },
+    { name = "tqdm" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/50/f8/91ddef5f3eade07f0f2c25a3bc7b2ad0eb29919b60dc523c77cea1c5671a/jp_tools-0.5.7.tar.gz", hash = "sha256:5b90371750048dbedfc300b0a5aed7f04ab606376665cf28be570a2c11911942", size = 163372, upload-time = "2026-02-01T00:25:55.952Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/8d/c8/3da9ba7f4f9868ab7a0414e7921035053e7185e1b2460a0edd0f5cbc6852/jp_tools-0.5.7-py3-none-any.whl", hash = "sha256:d165ddffa17387621a0d6696b7cacdbb61130e9a5f906f66333f4e3995b3ef00", size = 15304, upload-time = "2026-02-01T00:25:54.361Z" },
 ]
 
 [[package]]
